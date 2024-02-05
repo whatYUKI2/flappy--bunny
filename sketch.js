@@ -1,16 +1,16 @@
 let player;
 let pegacoeio = [];
 let comecoeio = [];
-let coeiopequebrado = []; 
+let coeiopequebrado = [];
 let vidas = 3;
 let pontos = 0;
 let canvas;
-let imgplayer, imgpegacoeio , imgcomecoeio, imgcoeiopequebrado;
+let imgplayer, imgpegacoeio, imgcomecoeio, imgcoeiopequebrado;
 
 
 function setup() {
-createCanvas(800,450);
- player=new Jogador();
+  createCanvas(800, 450);
+  player = new Jogador();
 }
 
 function draw() {
@@ -19,26 +19,31 @@ function draw() {
   player.move();
   nascercomecueio();
 
-for (let c of comecoeio){
-  c.show();
-  c.move();
-}
+  for (let c of comecoeio) {
+    c.show();
+    c.move();
+  }
+
+  for (let come of comecoeio) {
+    come.show();
+    come.move();
+  }
 
 }
 
-function keyPressed(){
- if (key==" ") {
-  player.jump();
- }
+function keyPressed() {
+  if (key == " ") {
+    player.jump();
+  }
 }
-function nascercomecueio(){
-  if(frameCount%200==0){
+function nascercomecueio() {
+  if (frameCount % 200 == 0) {
     comecoeio.push(new Inimigo());
   }
 }
 
-function coeiopequebrado(){
-  if(frameCount%200==0){
+function nascercoeiopequebrado() {
+  if (frameCount % 200 == 0) {
     coeiopequebrado.push(new Inimigo());
   }
 }
