@@ -7,10 +7,10 @@ let pontos = 0;
 let canvas;
 let imgplayer, imgpegacoeio, imgcomecoeio, imgcoeiopequebrado;
 
+
 function setup() {
   createCanvas(800, 450);
-  rectMode(CENTER);
-  player = new Jogador(); // Make sure Jogador class is defined
+  player = new Jogador();
 }
 
 function draw() {
@@ -25,10 +25,11 @@ function draw() {
     c.move();
   }
 
-  for (let p of coeiopequebrado) {
-    p.show();
-    p.move();
+  for (let come of coeiopequebrado) {
+    come.show();
+    come.move();
   }
+
 }
 
 function keyPressed() {
@@ -36,7 +37,6 @@ function keyPressed() {
     player.jump();
   }
 }
-
 function nascercomecueio() {
   if (frameCount % 200 == 0) {
     comecoeio.push(new Inimigo());
@@ -44,7 +44,7 @@ function nascercomecueio() {
 }
 
 function nascercoeiopequebrado() {
-  if (frameCount % 300 == 0) { 
+  if (frameCount % 200 == 0) {
     coeiopequebrado.push(new Inimigo2());
   }
 }
