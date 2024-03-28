@@ -20,4 +20,14 @@ class Jogador {
         this.y += this.vy;
         this.vy += this.gravity;
     }
+
+    colidir(inimigo){
+        let x1 = this.x + this.w/2;
+        let y1 = this.y + this.h/2;
+        let x2 = inimigo.x + inimigo.w/2;
+        let y2 = inimigo.y + inimigo.h/2;
+        return collideRectRect(x1, y1, this.w, this.h,x2, y2, inimigo.w, inimigo.h);
+    }
+
+
 }

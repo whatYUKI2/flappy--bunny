@@ -23,7 +23,14 @@ function draw() {
   for (let c of comecoeio) {
     c.show();
     c.move();
+    if(player.colidir(c)){
+      console.log("perdeu troxa")
+      noLoop();
+    }
   }
+
+
+
 
   for (let come of coeiopequebrado) {
     come.show();
@@ -47,4 +54,7 @@ function nascercoeiopequebrado() {
   if (frameCount % 200 == 0) {
     coeiopequebrado.push(new Inimigo2());
   }
+
+
+
 }
